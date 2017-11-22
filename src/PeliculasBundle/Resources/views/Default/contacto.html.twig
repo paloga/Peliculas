@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<div class="wrapper">
+<form class="form-signin" id="form">
+  <h2 class="form-signin-heading">Contactar</h2>
+    <input type="text" class="form-control" name="nombre" placeholder="Nombre"/>
+    <input type="text" class="form-control" name="apellidos" placeholder="Apellidos"/>
+    <input type="text" class="form-control" name="correo" placeholder="Correo"/>
+    <textarea name="comment" form="form" class="form-control">Enter text here...</textarea>
+    <br>
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Enviar</button>
+</form>
+</div>
+{% endblock %}

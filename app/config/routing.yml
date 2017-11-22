@@ -1,0 +1,8 @@
+peliculas:
+    resource: "@PeliculasBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation

@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<div class="wrapper">
+<form class="form-signin">
+  <h2 class="form-signin-heading">Registrate</h2>
+  <input type="text" class="form-control" name="username" placeholder="Email Address"/>
+  <input type="password" class="form-control" name="password" placeholder="Password"/>
+  <input type="password" class="form-control" name="password" placeholder="Vuelve a escribir la contraseña"/>
+  <input type="text" class="form-control" name="DNI" placeholder="DNI"/>
+  <br>
+  <button class="btn btn-lg btn-primary btn-block" type="submit">Registrate</button>
+</form>
+</div>
+{% endblock %}

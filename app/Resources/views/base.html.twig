@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block stylesheets %}
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% endblock %}
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+
+    </head>
+    <body>
+
+        <div id="header">
+      		<!--
+      		<a href="index.html" class="logo">
+      			<img src="images/logo.jpg" alt="">
+      		</a>
+      	-->
+      		<ul id="navigation">
+      			<li class="selected">
+      				<a href="{{path('home')}}">Home</a>
+      			</li>
+      			<li>
+      				<a href="{{path('peliculas')}}">Películas</a>
+      			</li>
+      			<li>
+      				<a href="{{path('libros')}}">Libros</a>
+      			</li>
+      			<li>
+      				<a href="{{path('contacto')}}">Contactar</a>
+      			</li>
+            <li>
+      				<a href="{{path('registro')}}">Registrarse</a>
+      			</li>
+            <li>
+      				<a href="{{path('login')}}">Entrar</a>
+      			</li>
+      		</ul>
+      	</div>
+
+          {% set login = "login" %}
+          {% set registro = "registro" %}
+          {% set contacto = "contacto" %}
+          {% set direccion = app.request.get('_route') %}
+          {% if ((direccion == login) or (direccion == registro) or (direccion == contacto)) %}
+          {% else %}
+            <div class="w3-content w3-display-container">
+              <img class="Slice" src="{{ asset('img/barry.jpg')}}" style="width:100%">
+              <img class="Slice" src="{{ asset('img/manchester.jpg')}}" style="width:100%">
+              <img class="Slice" src="{{ asset('img/cazador.jpg')}}" style="width:100%">
+
+              <button class="w3-button w3-black w3-display-left" onclick="plusDivs(-1)">&#10094;</button>
+              <button class="w3-button w3-black w3-display-right" onclick="plusDivs(1)">&#10095;</button>
+            </div>
+          {% endif %}
+
+
+          {% block body %}
+          {% endblock %}
+          {% block footer %}
+            <div id="footer">
+          		<div>
+          			<p>&copy; 2017 by Pablo López Gascueña. All rights reserved.</p>
+          		</div>
+          	</div>
+          {% endblock %}
+        {% block javascripts %}
+        <script>
+      	var indiceSlice = 1;
+      	showDivs(indiceSlice);
+      	function plusDivs(n) {
+      	  showDivs(indiceSlice += n);
+      	}
+      	function showDivs(n) {
+      	  var i;
+      	  var x = document.getElementsByClassName("Slice");
+      	  if (n > x.length) {
+            indiceSlice = 1;
+          }
+      	  if (n < 1) {
+            indiceSlice = x.length;
+          }
+      	  for (i = 0; i < x.length; i++) {
+      	     x[i].style.display = "none";
+      	  }
+      	  x[indiceSlice-1].style.display = "block";
+      	}
+      	</script>
+      {% endblock %}
+    </body>
+</html>

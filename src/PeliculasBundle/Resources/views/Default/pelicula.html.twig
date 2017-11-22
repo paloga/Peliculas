@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="contenedorPeliculas">
+  <div class="w3-container flotar" style="width:400px">
+    <div class="w3-card-4" style="width:50%">
+      <img src="{{ pelicula.imagen }}" style="width:100%">
+      <div class="w3-container">
+        <strong>{{ pelicula.nombre }}</strong>
+        <p>Director: {{ pelicula.director }}</p>
+        <p>Duración: {{ pelicula.duracion }}</p>
+        <p>Genero: {{ pelicula.genero }}</p>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

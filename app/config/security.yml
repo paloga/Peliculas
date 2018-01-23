@@ -3,6 +3,17 @@
 security:
 
     # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
+    encoders:
+        RestauranteBundle\Entity\User: bcrypt
+        Symfony\Component\Security\Core\User\User: plaintext
+    providers:
+        in_memory:
+            memory:
+                users:
+                    admin:
+                        password: 1234
+                        roles: 'ROLE_ADMIN'
+    # https://symfony.com/doc/current/security.html#b-configuring-how-users-are-loaded
     providers:
         in_memory:
             memory: ~
@@ -13,6 +24,16 @@ security:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
             security: false
 
+        #admin:
+            #pattern: ^/admin
+            #http_basic: ~
+            #firewalls:
+        #usuarios:
+            #pattern: ^/usuarios
+            #anonymous: ~
+            #form_login:
+                #login_path: /usuarios/login
+                #check_path: /usuarios/login
         main:
             anonymous: ~
             # activate different ways to authenticate

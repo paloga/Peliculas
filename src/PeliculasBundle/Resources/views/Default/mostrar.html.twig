@@ -9,9 +9,10 @@
         <strong>{{ pelicula.nombre }}</strong>
         <p>Director: {{ pelicula.director }}</p>
         <p>Duración: {{ pelicula.duracion }}</p>
-        <p>Genero: {{ pelicula.genero }}</p>
       </div>
     </div>
   </div>
 </div>
+<a href="/actualizar/{{ pelicula.id }}" class="w3-button w3-black">Actualizar</a>
+<a href="/eliminar/{{ pelicula.id }}" class="w3-button w3-black">Eliminar</a>
 {% endblock %}

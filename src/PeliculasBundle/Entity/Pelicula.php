@@ -36,9 +36,8 @@ class Pelicula
     private $director;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="genero", type="string", length=255)
+     * @ORM\ManyToOne(targetEntity="Genero", inversedBy="peliculas")
+     * @ORM\JoinColumn(name="genero_id", referencedColumnName="id")
      */
     private $genero;
 
@@ -123,29 +122,6 @@ class Pelicula
         return $this->director;
     }
 
-    /**
-     * Set genero
-     *
-     * @param string $genero
-     *
-     * @return Pelicula
-     */
-    public function setGenero($genero)
-    {
-        $this->genero = $genero;
-
-        return $this;
-    }
-
-    /**
-     * Get genero
-     *
-     * @return string
-     */
-    public function getGenero()
-    {
-        return $this->genero;
-    }
 
     /**
      * Set duracion
@@ -218,4 +194,32 @@ class Pelicula
     {
         return $this->descripcion;
     }
+
+    /**
+     * Set genero
+     *
+     * @param \PeliculasBundle\Entity\Genero $genero
+     *
+     * @return Pelicula
+     */
+    public function setGenero(\PeliculasBundle\Entity\Genero $genero = null)
+    {
+        $this->genero = $genero;
+
+        return $this;
+    }
+
+    /**
+     * Get genero
+     *
+     * @return \PeliculasBundle\Entity\Genero
+     */
+    public function getGenero()
+    {
+        return $this->genero;
+    }
+
+    /*public function __toString() {
+      return $this->genero;
+    }*/
 }

@@ -20,7 +20,7 @@ class PeliculasController extends Controller
       return $this->render('PeliculasBundle:Default:alquiler.html.twig');
   }
   /**
-   * @Route("/insertar")
+   * @Route("/admin/insertar")
    */
   public function insertarPAction(Request $request)
   {

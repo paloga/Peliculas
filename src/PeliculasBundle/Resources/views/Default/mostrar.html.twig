@@ -13,6 +13,9 @@
     </div>
   </div>
 </div>
-<a href="/actualizar/{{ pelicula.id }}" class="w3-button w3-black">Actualizar</a>
-<a href="/eliminar/{{ pelicula.id }}" class="w3-button w3-black">Eliminar</a>
+{% if is_granted("ROLE_ADMIN") %}
+  <a href="{{path('actualizar', { 'id' : pelicula.id })}}" class="w3-button w3-black">Actualizar</a>
+  <a href="{{path('eliminar', { 'id' : pelicula.id })}}" class="w3-button w3-black">Eliminar</a>
+{% endif %}
+
 {% endblock %}

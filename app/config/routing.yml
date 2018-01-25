@@ -7,3 +7,6 @@ peliculas:
 app:
     resource: '@AppBundle/Controller/'
     type: annotation
+
+logout:
+    path: /usuarios/logout

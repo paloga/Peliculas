@@ -50,7 +50,7 @@ class PeliculasController extends Controller
   }
 
   /**
-   * @Route("/mostrar/{id}", name="peliculas_id")
+   * @Route("/mostrar/{id}", name="mostrar")
    */
   public function peliculaActionId($id)
   {
@@ -59,7 +59,7 @@ class PeliculasController extends Controller
       return $this->render('PeliculasBundle:Default:mostrar.html.twig', array('pelicula' => $pelicula));
   }
   /**
-   * @Route("/eliminar/{id}", name="eliminar")
+   * @Route("/admin/eliminar/{id}", name="eliminar")
    */
   public function eliminarActionId($id)
   {
@@ -72,7 +72,7 @@ class PeliculasController extends Controller
   }
 
   /**
-   * @Route("/actualizar/{id}", name="actualizar")
+   * @Route("/admin/actualizar/{id}", name="actualizar")
    */
   public function actualizarPAction(Request $request, $id)
   {

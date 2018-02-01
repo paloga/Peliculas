@@ -56,7 +56,7 @@ class DefaultController extends Controller
         return $this->render('PeliculasBundle:Default:registro.html.twig', array('form' => $form -> createView()));
     }
     /**
-    * @Route("/usuarios/login", name="login")
+    * @Route("/login", name="login")
     */
    public function loginAction(Request $request)
    {

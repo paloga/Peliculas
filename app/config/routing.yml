@@ -9,4 +9,4 @@ app:
     type: annotation
 
 logout:
-    path: /usuarios/logout
+    path: /logout

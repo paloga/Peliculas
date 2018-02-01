@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="contenedorPeliculas">
+{% for users in user %}
+  <p>Username: {{ users.username }}</p>
+  Email: {{ users.email }}
+  <a href="{{path('actualizaru', { 'id' : users.id })}}" class="w3-button w3-black">Actualizar</a>
+  <a href="{{path('eliminaru', { 'id' : users.id })}}" class="w3-button w3-black">Eliminar</a>
+</div>
+
+{% endfor %}
+
+{% endblock %}

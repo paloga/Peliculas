@@ -63,6 +63,7 @@ class UsersController extends Controller
      */
     public function eliminarUserActionId($id)
     {
+      //Cojemos al usuario que seleccionamos por id. Y los removemos de la base de datos.
         $em = $this->getDoctrine()->getManager();
         $repository = $this->getDoctrine()->getRepository(User::class);
         $user = $repository->find($id);
@@ -76,6 +77,7 @@ class UsersController extends Controller
      */
     public function actualizarUserAction(Request $request, $id)
     {
+      //
       $em = $this->getDoctrine()->getManager();
       $user = $em->getRepository(User::Class)->find($id);
       $form = $this->createForm(UsersType::class, $user);

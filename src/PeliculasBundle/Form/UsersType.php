@@ -23,6 +23,7 @@ class UsersType extends AbstractType
       $builder
       ->add('username', TextType::class)
       ->add('email', EmailType::class)
+      //Con el collectionType nos lo transforma directamente.
       ->add('roles', CollectionType::class)
       ->add('Salvar', SubmitType::class)
       ->add('Borrar', ResetType::class)

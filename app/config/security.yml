@@ -42,4 +42,5 @@ security:
             #form_login: ~
     access_control:
       - { path: ^/login,roles: IS_AUTHENTICATED_ANONYMOUSLY }
+      #Especificamos que si empieza por /admin/ solo puede entrar en administrador.
       - { path: ^/admin,roles: ROLE_ADMIN }

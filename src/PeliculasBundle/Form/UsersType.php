@@ -11,7 +11,7 @@ use Symfony\Component\Form\Extension\Core\Type\RepeatedType;
 use Symfony\Component\Form\Extension\Core\Type\PasswordType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\ResetType;
-use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 
 class UsersType extends AbstractType
 {
@@ -23,6 +23,7 @@ class UsersType extends AbstractType
       $builder
       ->add('username', TextType::class)
       ->add('email', EmailType::class)
+      ->add('roles', CollectionType::class)
       ->add('Salvar', SubmitType::class)
       ->add('Borrar', ResetType::class)
      ;
